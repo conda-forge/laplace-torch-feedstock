@@ -28,6 +28,7 @@ requirements:
     - python >=3.8
     - pytorch
     - torchvision
+    - numpy
 
 test:
   imports:
