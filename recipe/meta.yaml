@@ -1,5 +1,5 @@
 {% set name = "laplace-torch" %}
-{% set version = "0.1a1" %}
+{% set version = "0.1a2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/laplace-torch-{{ version }}.tar.gz
-  sha256: 022c534d707247fd22a23b3ff33fd65020b6f52ff1a461011b8ea25e67094886
+  sha256: 9e9329ad7463eddd3a8c9c0b3647800a8f200886d941ba90a3b664739e4a8500
 
 build:
   number: 0
@@ -28,6 +28,7 @@ requirements:
     - python >=3.8
     - pytorch
     - torchvision
+    - numpy
 
 test:
   imports:
