@@ -31,6 +31,7 @@ requirements:
     - torchmetrics
     - numpy
     - tqdm
+    - opt_einsum
 
 test:
   imports:
