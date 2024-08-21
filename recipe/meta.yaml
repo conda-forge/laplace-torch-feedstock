@@ -32,7 +32,7 @@ requirements:
     - numpy
     - tqdm
     - opt_einsum
-    - asdl
+    - asdfghjkl
 
 test:
   imports:
