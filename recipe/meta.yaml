@@ -1,23 +1,23 @@
-context:
-  name: laplace-torch
-  version: 0.2.1
+{% set name = "laplace-torch" %}
+{% set version = "0.2.1" %}
+
 
 package:
-  name: ${{ name|lower }}
-  version: ${{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 641823a6d3e1dcb8297202b896ae2969334bf96df9a4a6f8cf688896d67d96f2
 
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - ${{ stdlib("c") }}
+    - {{ stdlib("c") }}
   host:
     - pip
     - python >=3.8
@@ -25,7 +25,6 @@ requirements:
   run:
     - asdfghjkl
     - backpack-for-pytorch
-    - curvlinops-for-pytorch
     - python >=3.8
     - pytorch
     - torchvision
@@ -35,17 +34,16 @@ requirements:
     - opt_einsum
     - asdfghjkl
 
-tests:
-  - python:
-      imports:
-        - laplace
-        - laplace.curvature
+test:
+  imports:
+    - laplace
+    - laplace.curvature
 
 about:
+  home: https://github.com/AlexImmer/Laplace
   summary: laplace - Laplace approximations for deep learning
   license: MIT
   license_file: LICENSE.txt
-  homepage: https://github.com/AlexImmer/Laplace
 
 extra:
   recipe-maintainers:
