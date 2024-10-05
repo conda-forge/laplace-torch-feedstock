@@ -16,8 +16,6 @@ build:
   script: python -m pip install . -vv
 
 requirements:
-  build:
-    - ${{ stdlib("c") }}
   host:
     - pip
     - python >=3.8
