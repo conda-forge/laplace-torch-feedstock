@@ -33,6 +33,7 @@ requirements:
     - tqdm
     - opt_einsum
     - asdfghjkl
+    - torchaudio
 
 tests:
   - python:
