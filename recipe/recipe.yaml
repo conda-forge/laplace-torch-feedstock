@@ -32,7 +32,7 @@ requirements:
     - numpy
     - tqdm
     - opt_einsum
-    - asdfghjkl
+    - asdfghjkl ==0.1a4
     - torchaudio
 
 tests:
