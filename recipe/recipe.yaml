@@ -41,8 +41,6 @@ tests:
       imports:
         - laplace
         - laplace.curvature
-      requires:
-        - python >=${{ python_min }}
 
 about:
   summary: laplace - Laplace approximations for deep learning
