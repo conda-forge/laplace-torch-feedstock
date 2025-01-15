@@ -1,6 +1,7 @@
-{% set name = "laplace-torch" %}
-{% set version = "0.2.1" %}
-{% set python_min = "3.8" %}
+context:
+  name: laplace-torch
+  version: 0.2.1
+  python_min: "3.8"
 
 package:
   name: ${{ name|lower }}
@@ -36,11 +37,12 @@ requirements:
     - torchaudio
 
 tests:
-  imports:
-    - laplace
-    - laplace.curvature
-  requires:
-    - python ${{ python_min }}
+  - python:
+      imports:
+        - laplace
+        - laplace.curvature
+      requires:
+        - python ${{ python_min }}
 
 about:
   summary: laplace - Laplace approximations for deep learning
