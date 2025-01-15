@@ -1,31 +1,31 @@
-context:
-  name: laplace-torch
-  version: 0.2.1
+{% set name = "laplace-torch" %}
+{% set version = "0.2.1" %}
+{% set python_min = "3.8" %}
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
   sha256: 641823a6d3e1dcb8297202b896ae2969334bf96df9a4a6f8cf688896d67d96f2
 
 build:
   number: 1
   noarch: python
-  script: python -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python ${{ python_min }}
     - setuptools
     - setuptools-scm
   run:
     - asdfghjkl
     - backpack-for-pytorch
     - curvlinops-for-pytorch
-    - python >=3.8
+    - python >=${{ python_min }}
     - pytorch
     - torchvision
     - torchmetrics
@@ -36,10 +36,11 @@ requirements:
     - torchaudio
 
 tests:
-  - python:
-      imports:
-        - laplace
-        - laplace.curvature
+  imports:
+    - laplace
+    - laplace.curvature
+  requires:
+    - python ${{ python_min }}
 
 about:
   summary: laplace - Laplace approximations for deep learning
