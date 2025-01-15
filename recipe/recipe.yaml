@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python ${{ python_min }}
+    - python >=${{ python_min }}
     - setuptools
     - setuptools-scm
   run:
@@ -42,7 +42,7 @@ tests:
         - laplace
         - laplace.curvature
       requires:
-        - python ${{ python_min }}
+        - python >=${{ python_min }}
 
 about:
   summary: laplace - Laplace approximations for deep learning
