@@ -1,6 +1,6 @@
 context:
   name: laplace-torch
-  version: 0.2.1
+  version: "0.2.2.2"
   python_min: "3.9"
 
 package:
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 641823a6d3e1dcb8297202b896ae2969334bf96df9a4a6f8cf688896d67d96f2
+  sha256: 7898a24b7d143bc8f23b69817767277b8d9e260682a62b4d172a58deeed6dd87
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: python -m pip install . -vv
 
@@ -22,6 +22,8 @@ requirements:
     - python ${{ python_min }}.*
     - setuptools
     - setuptools-scm
+    - pdm
+    - pdm-backend
   run:
     - asdfghjkl
     - backpack-for-pytorch
