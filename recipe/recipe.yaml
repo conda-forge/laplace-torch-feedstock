@@ -22,6 +22,7 @@ requirements:
     - python ${{ python_min }}.*
     - setuptools
     - setuptools-scm
+    - pdm
   run:
     - asdfghjkl
     - backpack-for-pytorch
