@@ -23,6 +23,7 @@ requirements:
     - setuptools
     - setuptools-scm
     - pdm
+    - pdm-backend
   run:
     - asdfghjkl
     - backpack-for-pytorch
