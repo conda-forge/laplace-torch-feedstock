@@ -33,7 +33,7 @@ requirements:
     - numpy
     - tqdm
     - opt_einsum
-    - asdfghjkl ==0.1a4
+    - asdfghjkl ==0.1a5
     - torchaudio
 
 tests:
