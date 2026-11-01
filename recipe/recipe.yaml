@@ -1,6 +1,6 @@
 context:
   name: laplace-torch
-  version: "0.3"
+  version: "0.4"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: ba4315b9692b3065470e5e5a1e4a917edb8b40141e5eea4b6a4044ec79b087c7
+  sha256: c8379379df28d38150273ff278354f4c7ddb14d988eb1c7b0064f46838908bc4
 
 build:
   number: 0
@@ -33,7 +33,7 @@ requirements:
     - numpy
     - tqdm
     - opt_einsum
-    - asdfghjkl ==0.1a4
+    - asdfghjkl ==0.1a5
     - torchaudio
 
 tests:
