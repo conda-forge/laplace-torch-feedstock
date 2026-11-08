@@ -1,6 +1,6 @@
 context:
   name: laplace-torch
-  version: "0.4"
+  version: "0.5"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: c8379379df28d38150273ff278354f4c7ddb14d988eb1c7b0064f46838908bc4
+  sha256: 1c9a843f445bb5814662738a09c810afe310bc9db0bde6271b76cd660759adb4
 
 build:
   number: 0
